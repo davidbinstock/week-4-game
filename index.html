@@ -5,32 +5,105 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Crystals Collector</title>
-    <!-- link css -->
-    <link rel="stylesheet" href="./assets/css/reset.css">
+    <!-- link to bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <!-- link to my css stylesheet -->
     <link rel="stylesheet" href="./assets/css/style.css">
     <!-- link to JQuery-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 </head>
 <body>
-    <div class="content-wrapper">
-        <div class="title">Crystals Collector</div>
-        <div class="instructions">
-            Instructions 
-            <br><br>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam ac hendrerit nisi. Suspendisse porttitor bibendum accumsan. Pellentesque quis fermentum risus. Sed leo risus, ornare eget dui a, consectetur dapibus enim. Aenean vel accumsan nibh. Maecenas fermentum porttitor ultricies. Cras auctor urna eu accumsan fermentum. Maecenas imperdiet dolor eu dolor mattis, nec sagittis massa mollis. Curabitur ante felis, iaculis a congue sed, accumsan ut turpis. Duis enim mauris, porta a commodo imperdiet, tempus nec nisi. Donec faucibus, nibh vitae ultricies egestas, ligula mauris sagittis ante, a commodo tellus massa eu tortor. Duis vulputate faucibus eros, ut varius enim euismod vel. Donec eu felis a nisi ultrices sollicitudin. Ut fringilla turpis fringilla eros varius, nec lobortis turpis pharetra.
+    <div class="container">
+        <div class="jumbotron">
+            <h1 class="text-center">Collect That Stuff</h1>
         </div>
-        <div class="scoreboard">scoreboard: wins, losses</div>
-        <div class="target-number-display">(your target number) <span id="target-number">(--)</span> </div>
-        <div class="crystals-wrapper">
-            <button id="crystal-1" class="crystal" value="1">crystal-1</button>
-            <button id="crystal-2" class="crystal" value="2">crystal-2</button>
-            <button id="crystal-3" class="crystal" value="3">crystal-3</button>
-            <button id="crystal-4" class="crystal" value="4">crystal-4</button>
+        <div class="row">
+            <div class="col-12">
+            <div class="card" style="width: 100%">
+                <div class="card-body">
+                    <div class="instruction-wrapper hide-instruction-toggle">
+                        <h5 class="card-title">Instructions</h5>
+                        <p class="card-text">
+                            <ul>
+                                <li>Click on them crystals to add points to your score, yo</li>
+                                <li>Each Crystal is worth a different number of points; you won't know how much until you click it, tho</li>
+                                <li>If you hit the target score, you win; if you go over, you lose, bro</li>
+                                <li>Each round, the value of the crystals will change, so...</li>
+                                <li>Keep your wits about you and see if you can become a collecting crystal pro</li>
+                                <li>(honestly, its not that hard... just click on the crystals and try to reach the target score)</li>
+                            </ul>
+                        </p>
+                    </div>
+                    <button type="button" class="btn btn-primary" id="instruction-hide-btn">Ok, I got it. Hide the stupid instructions</button>
+                </div>
+            </div>
+            </div>
         </div>
-        <div class="value-tally-display">your current value: <span id="value-tally">(--)</span>  </div>
-        <button class="new-game" id="new-game">New Game</button>
-
+        <div class="row">
+            <div class="col-12">
+                <div class="card" style="width: 100%;">
+                    <div class="card-body">
+                        <h5 class="card-title">Message Board</h5>
+                        <span id="message-text">Placeholder</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-6">
+                <div class="card" style="width: 100%;">
+                    <div class="card-body">
+                        <h5 class="card-title">Where'm I at?</h5>
+                        <ul class="list-group">
+                            <li class="list-group-item">
+                                Target Score:
+                                <span id="target-number" class="badge badge-primary">25</span>
+                            </li>
+                            <li class="list-group-item">
+                                Your Score:
+                                <span id="value-tally" class="badge badge-primary">25</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-6">
+                <div class="card" style="width: 100%;">
+                    <div class="card-body">
+                        <h5 class="card-title">How'm I doin?</h5>
+                        <ul class="list-group">
+                            <li class="list-group-item">
+                                Wins:
+                                <span id="wins-display" class="badge badge-primary">0</span>
+                            </li>
+                            <li class="list-group-item">
+                                Losses:
+                                <span id="losses-display" class="badge badge-primary">0</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row my-3"> 
+            <div class="col-12 d-flex justify-content-center">
+                <button type="button" class="btn mx-3 crystal" id="crystal-1" value="" >
+                    <img src="./assets/images/beatles_paul.jpeg" alt="Paul" height="200px">
+                </button>
+                <button type="button" class="btn mx-3 crystal" id="crystal-2" value="">
+                        <img src="./assets/images/beatles_john.jpg" alt="Paul" height="200px">
+                </button>
+                <button type="button" class="btn mx-3 crystal" id="crystal-3" value="">
+                        <img src="./assets/images/beatles_george.jpeg" alt="Paul" height="200px">
+                </button>
+                <button type="button" class="btn mx-3 crystal" id="crystal-4" value="">
+                        <img src="./assets/images/beatles_ringo.jpeg" alt="Paul" height="200px">
+                </button>
+            </div>
+        </div>
+        
     </div>
+    
 
     <script src="./assets/javascript/game.js"></script>
 </body>
