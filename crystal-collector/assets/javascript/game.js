@@ -9,15 +9,14 @@ var losses = 0;
 var stopGame = false;
 var instructionsHidden = false;
 var collections = {
-    list: ["beatles","pokemon", "peanuts","loonyToons","seinfeld","scoobyDoo"],
-    beatles: ["beatles_paul.jpeg","beatles_john.jpg","beatles_george.jpeg", "beatles_ringo.jpeg"],
-    pokemon: ["pokemon_bulbasaur.png", "pokemon_charmander.png", "pokemon_growlithe.jpg", "pokemon_pidgeot.png", "pokemon_pikachu.png", "pokemon_poliwag.png", "pokemon_squirtle.png","pokemon_zubat.png"],
+    list: ["peanuts","loonyToons", "scoobyDoo","flintstones", "jetsons", "spongebob", "heyArnold" ],
     peanuts: ["peanuts_charlie_brown.png", "peanuts_franklin.png", "peanuts_linus.gif", "peanuts_lucy.gif", "peanuts_marcie.png", "peanuts_pigpen.png", "peanuts_sally.png", "peanuts_schroeder.png", "peanuts_snoopy.png", "peanuts_woodstock.png", "peanuts_peppermint_patty.png" ],
     loonyToons: ["loony_bugs_bunny.png", "loony_daffy_duck.png", "loony_elmer_fudd.png", "loony_foghorn_leghorn.png", "loony_marvin_the_martian.png", "loony_porky_pig.png", "loony_road_runner.png", "loony_sylvester_cat.png", "loony_tweety.png", "loony_wile_e_cayote.gif", "loony_yosemite_sam.png"],
-    seinfeld: ["seinfeld_elaine.jpg", "seinfeld_george.jpg", "seinfeld_jerry.jpg", "seinfeld_kramer.jpg"],
     scoobyDoo:["scooby_daphne.png","scooby_doo.png","scooby_fred.png", "scooby_shaggy.png", "scooby_velma.png"],
-
-
+    flintstones: ["flintstone_bam.gif", "flintstone_barney.png", "flintstone_betty.png", "flintstone_dino.gif", "flintstone_fred.png", "flintstone_pebble.png", "flintstone_wilma.png"],
+    jetsons: ["jetsons_astro.png", "jetsons_elroy.png", "jetsons_george.png", "jetsons_judy.png", "jetsons_jane.gif", "jetsons_rosie.png"],
+    spongebob: ["spongebob sandy.png", "spongebob_larry.png", "spongebob_mrkrabs.png", "spongebob_patrick.png", "spongebob_plankton.png", "spongebob_spongebob.png", "spongebob_squidward.png"],
+    heyArnold: ["arnold_arnold.png", "arnold_gerald.png", "arnold_grandma.png", "arnold_grandpa.png", "arnold_helga.png", "arnold_pheobe.png" ]
 };
 var collectionIndex = 0;
 
@@ -27,6 +26,7 @@ var collectionIndex = 0;
 //=======================================================================================
 
 newGame();
+newItems();
 $("#wins-display").html(wins) 
 $("#losses-display").html(losses) 
 
@@ -142,7 +142,6 @@ function fourRandomNumbers(arrayLength){
 // go to the next collection and choose four random items from that array
 function newItems(){
     console.log("---newItems function invoked---")
-    collectionIndex++;
     //if we're at the end of the list of collections, start over
     if(collectionIndex >= collections.list.length){
         collectionIndex = 0;
@@ -161,5 +160,6 @@ function newItems(){
         console.log(newItem);
         $("#crystal-"+(i+1)+" img").attr("src", "./assets/images/" + newItem);
     }
+    collectionIndex++;
     console.log("---End of newItem function---")
 }
