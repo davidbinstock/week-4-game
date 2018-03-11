@@ -1,0 +1,65 @@
+.jumbotron{
+    padding: 2rem 2rem;
+}
+
+.crystal{
+    width: 175px;
+    height: 125px;
+}
+
+.item-image{
+    max-width: 160px;
+    max-height: 115px;
+}
+
+.number-display{
+    font-size: 1.5em;
+}
+
+.scoreboard-field{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-right: 1.0rem;
+    padding-left: 1.0rem;
+}
+@media screen and (max-width: 992px){
+    .crystal{
+        width: 200px;
+        height: 150px;
+    }
+    
+    .item-image{
+        max-width: 185px;
+        max-height: 140px;
+    }
+
+   
+}
+
+@media screen and (max-width: 500px){
+    .crystal{
+        width: 125px;
+        height: 100px;
+    }
+    
+    .item-image{
+        max-width: 110px;
+        max-height: 90px;
+    }
+
+    h1{
+        font-size: 1.5rem;
+    }
+
+    .jumbotron{
+        padding: 1rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .card-body {
+        padding: 0.5rem .75rem;
+    }
+   
+}
+

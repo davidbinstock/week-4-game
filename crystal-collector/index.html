@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Crystals Collector</title>
+    <!-- link to bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <!-- link to my css stylesheet -->
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <!-- link to JQuery-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="jumbotron">
+            <h1 class="text-center">Collect That Stuff</h1>
+        </div>
+        <div class="row mb-4">
+            <div class="col-12 mb-1 mb-md-3 col-lg-6 mb-lg-0 d-flex flex-wrap justify-content-around align-content-around">
+                <button type="button" class="btn mx-3 mb-1 mb-lg-0 crystal" id="crystal-1" value="">
+                    <img src="./assets/images/beatles_paul.jpeg" alt="item-1" class="item-image">
+                </button>
+                <button type="button" class="btn mx-3 mb-1 mb-lg-0 crystal" id="crystal-2" value="">
+                        <img src="./assets/images/beatles_john.jpg" alt="item-2" class="item-image">
+                </button>
+                <button type="button" class="btn mx-3 mb-1 mb-lg-0 crystal" id="crystal-3" value="">
+                        <img src="./assets/images/beatles_george.jpeg" alt="item-3" class="item-image">
+                </button>
+                <button type="button" class="btn mx-3 mb-1 mb-lg-0 crystal" id="crystal-4" value="">
+                        <img src="./assets/images/beatles_ringo.jpeg" alt="item-4" class="item-image">
+                </button>
+            </div>
+            <div class="col-12 col-lg-6">
+                <div class="row mb-1 mb-md-3">
+                    <div class="col-12">
+                        <div class="card" style="width: 100%;">
+                            <div class="card-body">
+                                <h5 class="card-title text-center">Message Board</h5>
+                                <div class="text-center" id="message-text">Placeholder</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="mb-1 mb-md-3 mb-lg-0 col-12 col-lg-6">
+                        <div class="card" style="width: 100%;">
+                            <div class="card-body">
+                                <h5 class="card-title text-center">Where'm I at?</h5>
+                                <ul class="list-group">
+                                    <li class="list-group-item scoreboard-field">
+                                        Target Score:
+                                        <span id="target-number" class="number-display">25</span>
+                                    </li>
+                                    <li class="list-group-item scoreboard-field">
+                                        Your Score:
+                                        <span id="value-tally" class="number-display">25</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-lg-6">
+                        <div class="card" style="width: 100%;">
+                            <div class="card-body">
+                                <h5 class="card-title text-center">How'm I doin?</h5>
+                                <ul class="list-group">
+                                    <li class="list-group-item scoreboard-field">
+                                        Wins:
+                                        <span id="wins-display" class="number-display">0</span>
+                                    </li>
+                                    <li class="list-group-item scoreboard-field">
+                                        Losses:
+                                        <span id="losses-display" class="number-display">0</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="col-12">
+            <div class="card" style="width: 100%">
+                <div class="card-body">
+                    <div class="instruction-wrapper hide-instruction-toggle">
+                        <h5 class="card-title">Instructions</h5>
+                        <p class="card-text">
+                            <ul>
+                                <li>Click on them crystals to add points to your score, yo</li>
+                                <li>Each Crystal is worth a different number of points; you won't know how much until you click it, tho</li>
+                                <li>If you hit the target score, you win; if you go over, you lose, bro</li>
+                                <li>Each round, the value of the crystals will change, so...</li>
+                                <li>Keep your wits about you and see if you can become a collecting crystal pro</li>
+                                <li>(honestly, its not that hard... just click on the crystals and try to reach the target score)</li>
+                            </ul>
+                        </p>
+                    </div>
+                    <button type="button" class="btn btn-primary" id="instruction-hide-btn">Ok, I got it. Hide the stupid instructions</button>
+                </div>
+            </div>
+            </div>
+        </div>
+        
+    </div>
+    
+    
+
+    <script src="./assets/javascript/game.js"></script>
+</body>
+</html>
