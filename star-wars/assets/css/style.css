@@ -1,0 +1,16 @@
+.character-staging-field{
+    background-color: coral;
+}
+
+.user-character-field, .opponent-field {
+    background-color: violet;
+}
+
+.defeated-field{
+    background-color: lightblue;
+}
+
+
+.character-card{
+    cursor: pointer;
+}

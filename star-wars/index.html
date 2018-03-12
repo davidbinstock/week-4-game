@@ -5,8 +5,64 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Star Wars Game</title>
+
+    <!-- link to bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <!-- link to css stylesheet-->
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <!-- link to JQuery-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    
 </head>
 <body>
+    <div class="container">
+        <div class="row">
+            <div class="col-12 character-staging-field d-flex">
+                Character Staging:
+                <div id="obi-wan-card" value="obiWanKenobi" class="card character-card" style="width: 18rem;">
+                    <img class="card-img-top" src="./assets/images/obi-wan.jpg" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title">Obi-Wan Kenobi</h5>
+                        <span class="health-display">120</span>
+                    </div>
+                </div>
+                <div id="yoda-card" value="yoda" class="card character-card" style="width: 18rem;">
+                    <img class="card-img-top" src="./assets/images/yoda2.jpg" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title">Yoda</h5>
+                        <span class="health-display">180</span>
+                    </div>
+                </div>
+                <div id="mace-windu-card" value="maceWindu" class="card character-card" style="width: 18rem;">
+                    <img class="card-img-top" src="./assets/images/mace-windu.jpg" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title">Mace Windu</h5>
+                        <span class="health-display">150</span>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+
+        <div class="row">
+            <div id="user-character-field" class="col-4 user-character-field">user character</div>
+            <div class="col-4">
+                <button id="attack-button">Attack!</button>
+                <div>Damage Inflicted:<span id="damage-inflicted"></span></div>
+                <div>Damage Sustained:<span id="damage-sustained"></span></div>
+            </div>
+            <div id="opponent-field" class="col-4 opponent-field">opponent</div>
+        </div>
+
+        <div class="row">
+            <div class="col-12 defeated-field">
+                defeated
+            </div>
+        </div> 
+    </div>
+
+    <!-- linking javascript  -->
+    <script src="./assets/javascript/game.js"></script>
     
 </body>
 </html>
