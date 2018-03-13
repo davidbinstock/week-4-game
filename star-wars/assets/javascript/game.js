@@ -50,6 +50,7 @@ $(".character-card").on("click", function(){
     if(characterChosen == false){
         userCharacter = characterList[$(this).attr("value")];
         console.log("you have chosen " + userCharacter.name + " as your character");
+        $("#message-text").html("you have chosen " + userCharacter.name + " as your character");
         $(this).detach().appendTo($("#user-character-field"));
         characterChosen = true;
     }else if(opponentChosen == false){
@@ -58,13 +59,16 @@ $(".character-card").on("click", function(){
         
         if(opponentCharacter.name == userCharacter.name ){
             console.log("can't fight yourself");
+            $("#message-text").html("can't fight yourself");
             return;
         }
         if(opponentCharacter.defeated){
             console.log("this player is already defeated")
+            $("#message-text").html("this player is already defeated");
             return;
         }
         console.log("you have chosen " + opponentCharacter.name + " as your opponent");
+        $("#message-text").html("you have chosen " + opponentCharacter.name + " as your opponent");
         $(this).detach().appendTo($("#opponent-field"));
         opponentChosen = true;
         //setting stopgame to false to allow attack click/function below
@@ -82,6 +86,7 @@ $("#attack-button").on("click", function(){
 
     if(!characterChosen||!opponentChosen){
         console.log("pick a user and opponent");
+        $("#message-text").html("pick a user and opponent");
         return;
     }
 

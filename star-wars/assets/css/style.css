@@ -27,3 +27,7 @@
     height: 50%
 
 }
+
+#message-text,#damage-inflicted, #damage-sustained {
+    font-weight: bold;
+}
