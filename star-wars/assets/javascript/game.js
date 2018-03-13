@@ -34,6 +34,7 @@ var characterList = {
 var opponentCharacter;
 var userCharacter;
 var attackIntesity = 1;
+var stopGame = false;
 
 //=========================================================
 //====================Game Play============================
@@ -66,6 +67,10 @@ $(".character-card").on("click", function(){
 //=====================Attack==============================
 $("#attack-button").on("click", function(){
 
+    if(stopGame){
+        return;
+    }
+
     if(!characterChosen||!opponentChosen){
         console.log("pick a user and opponent");
         return;
@@ -85,6 +90,14 @@ $("#attack-button").on("click", function(){
     $(opponentCharacter.id+">.card-body>.health-display").html(opponentCharacter.health);
     $("#damage-inflicted").html(damageInflicted);
     attackIntesity++;    
+
+    if(userCharacter.health <= 0){
+        $("#message-text").html("You Lose!");
+        stopGame = true;
+    }else if(opponentCharacter.health <= 0){
+        $("#message-text").html("You Win!");
+        stopGame = true;
+    }
 
 });
 
