@@ -13,6 +13,7 @@ var characterList = {
         health: 180,
         userBasePower: 8,
         opponentPower: 25,
+        defeated: false,
     }, 
     obiWanKenobi: {
         name: "Obi-Wan Kenobi",
@@ -20,6 +21,7 @@ var characterList = {
         health: 120,
         userBasePower: 5,
         opponentPower: 20,
+        defeated: false,
     }, 
     maceWindu: {
         name: "Mace Win mndu",
@@ -27,6 +29,7 @@ var characterList = {
         health: 150,
         userBasePower: 3,
         opponentPower: 15,
+        defeated: false,
     }, 
 }
 
@@ -57,9 +60,15 @@ $(".character-card").on("click", function(){
             console.log("can't fight yourself");
             return;
         }
+        if(opponentCharacter.defeated){
+            console.log("this player is already defeated")
+            return;
+        }
         console.log("you have chosen " + opponentCharacter.name + " as your opponent");
         $(this).detach().appendTo($("#opponent-field"));
         opponentChosen = true;
+        //setting stopgame to false to allow attack click/function below
+        stopGame = false;
     }
     
 });
@@ -94,11 +103,29 @@ $("#attack-button").on("click", function(){
     if(userCharacter.health <= 0){
         $("#message-text").html("You Lose!");
         stopGame = true;
+        showEndGameScreen("You Lose!", "you have lost this battle. Click ok to continue and try again or exit the browser to walk away in shame.")
     }else if(opponentCharacter.health <= 0){
         $("#message-text").html("You Win!");
         stopGame = true;
+        $(opponentCharacter.id).detach().appendTo($("#defeated-field"));
+        //set defeated value for opponent to true
+        opponentCharacter.defeated = true;
+        // setting opponent chosen flag to false to enable selection click/function above
+        opponentChosen = false;
+        showEndGameScreen("you Win!", "nice job, you won this battle. Click ok to continue and choose your next opponent!");
     }
 
 });
 
+//closing the game end screen
+$("#game-end-ok-btn").on("click", function(){
+    $(".game-end-card").hide();
+    //reset game....
+});
+
+function showEndGameScreen(mainMessage, subMessage) {
+    $("#game-end-title").html(mainMessage);
+    $("#game-end-text").html(subMessage);
+    $(".game-end-card").show();
+}
 

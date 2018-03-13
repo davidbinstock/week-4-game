@@ -14,3 +14,16 @@
 .character-card{
     cursor: pointer;
 }
+
+.game-end-card{
+    background-color: #f8b538;
+    display: none;
+    
+    position: fixed;
+    top: 10%;
+    left: 25%;
+
+    width: 50%;
+    height: 50%
+
+}
